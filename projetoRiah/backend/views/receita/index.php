@@ -3,30 +3,36 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+
+
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\CategorySearch */
+/* @var $searchModel common\models\ReceitaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Categories';
+$this->title = 'Receitas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="category-index">
+<div class="receita-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Category', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Receita', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'options' => ['style' => 'table-layout:fixed;'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'nome',
+            'tempo_preparo',
+            'descricao_preparo:ntext',
+            'id_categoria' =>['attribute'=>'categoria.nome'],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

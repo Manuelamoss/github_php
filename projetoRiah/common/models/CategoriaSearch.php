@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Recipe;
+use common\models\categoria;
 
 /**
- * RecipeSearch represents the model behind the search form of `common\models\Recipe`.
+ * CategoriaSearch represents the model behind the search form of `common\models\Category`.
  */
-class RecipeSearch extends Recipe
+class CategoriaSearch extends categoria
 {
     /**
      * {@inheritdoc}
@@ -18,8 +18,8 @@ class RecipeSearch extends Recipe
     public function rules()
     {
         return [
-            [['id', 'id_category'], 'integer'],
-            [['nome', 'tempo_preparo', 'descriao_preparo'], 'safe'],
+            [['id'], 'integer'],
+            [['nome'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class RecipeSearch extends Recipe
      */
     public function search($params)
     {
-        $query = Recipe::find();
+        $query = categoria::find();
 
         // add conditions that should always apply here
 
@@ -60,12 +60,9 @@ class RecipeSearch extends Recipe
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_category' => $this->id_category,
         ]);
 
-        $query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'tempo_preparo', $this->tempo_preparo])
-            ->andFilterWhere(['like', 'descriao_preparo', $this->descriao_preparo]);
+        $query->andFilterWhere(['like', 'nome', $this->nome]);
 
         return $dataProvider;
     }

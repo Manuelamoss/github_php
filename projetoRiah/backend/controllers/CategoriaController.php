@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Recipe;
-use common\models\RecipeSearch;
+use common\models\categoria;
+use common\models\CategoriaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RecipeController implements the CRUD actions for Recipe model.
+ * CategoriaController implements the CRUD actions for Category model.
  */
-class RecipeController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class RecipeController extends Controller
     }
 
     /**
-     * Lists all Recipe models.
+     * Lists all Category models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RecipeSearch();
+        $searchModel = new CategoriaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Displays a single Recipe model.
+     * Displays a single Category model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class RecipeController extends Controller
     }
 
     /**
-     * Creates a new Recipe model.
+     * Creates a new Category model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Recipe();
+        $model = new categoria();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Updates an existing Recipe model.
+     * Updates an existing Category model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Deletes an existing Recipe model.
+     * Deletes an existing Category model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,19 +110,18 @@ class RecipeController extends Controller
     }
 
     /**
-     * Finds the Recipe model based on its primary key value.
+     * Finds the Category model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Recipe the loaded model
+     * @return categoria the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Recipe::findOne($id)) !== null) {
+        if (($model = categoria::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
 }
