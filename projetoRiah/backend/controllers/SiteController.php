@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
@@ -64,7 +65,6 @@ class SiteController extends Controller
     }
 
 
-
     /**
      * Login action.
      *
@@ -81,7 +81,6 @@ class SiteController extends Controller
             return $this->goBack();
         } else {
             $model->password = '';
-
             return $this->render('login', [
                 'model' => $model,
             ]);
@@ -99,4 +98,11 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    //pagina do administrador
+    public function actionHomeadmin()
+    {
+        return $this->redirect('homeadmin');
+    }
 }
+        
