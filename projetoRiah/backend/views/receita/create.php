@@ -13,9 +13,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="receita-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?php if (\Yii::$app->user->can('createReceita')) {?>
+    // create post
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+    <?php
+    }?>
+
 
 </div>

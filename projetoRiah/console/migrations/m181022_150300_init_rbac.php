@@ -12,9 +12,9 @@ class m181022_150300_init_rbac extends Migration
         $auth = Yii::$app->authManager;
 
         // add "createPost" permission
-        $createPost = $auth->createPermission('createPost');
-        $createPost->description = 'Create a post';
-        $auth->add($createPost);
+        $createReceita = $auth->createPermission('createReceita');
+        $createReceita->description = 'Create a post';
+        $auth->add($createReceita);
 
         // add "updatePost" permission
         $updatePost = $auth->createPermission('updatePost');
@@ -24,7 +24,7 @@ class m181022_150300_init_rbac extends Migration
         // add "author" role and give this role the "createPost" permission
         $author = $auth->createRole('author');
         $auth->add($author);
-        $auth->addChild($author, $createPost);
+        $auth->addChild($author, $createReceita);
 
         // add "admin" role and give this role the "updatePost" permission
         // as well as the permissions of the "author" role

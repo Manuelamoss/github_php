@@ -45,6 +45,13 @@ return [
             ],
         ],
         */
+
+        'urlManagerFrontEnd' => [
+            'class' => 'yii\web\urlManager',
+            'baseUrl' => '/github_php/projetoRiah/frontend/web/index.php',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
     ],
     'params' => $params,
 ];

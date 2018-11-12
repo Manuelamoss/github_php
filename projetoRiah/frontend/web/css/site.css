@@ -1,6 +1,8 @@
 html,
 body {
     height: 100%;
+    background-image:url('board-bunch-cooking-349609.jpg');
+    background-size: cover;
 }
 
 .wrap {
