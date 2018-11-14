@@ -13,13 +13,13 @@ class m181022_150300_init_rbac extends Migration
 
         // add "createPost" permission
         $createReceita = $auth->createPermission('createReceita');
-        $createReceita->description = 'Create a post';
+        $createReceita->description = 'Create a receita';
         $auth->add($createReceita);
 
         // add "updatePost" permission
-        $updatePost = $auth->createPermission('updatePost');
-        $updatePost->description = 'Update post';
-        $auth->add($updatePost);
+        $updateReceita = $auth->createPermission('updateReceita');
+        $updateReceita->description = 'Update receita';
+        $auth->add($updateReceita);
 
         // add "author" role and give this role the "createPost" permission
         $author = $auth->createRole('author');
@@ -30,12 +30,12 @@ class m181022_150300_init_rbac extends Migration
         // as well as the permissions of the "author" role
         $admin = $auth->createRole('admin');
         $auth->add($admin);
-        $auth->addChild($admin, $updatePost);
+        $auth->addChild($admin, $updateReceita);
         $auth->addChild($admin, $author);
 
         // Assign roles to users. 1 and 2 are IDs returned by IdentityInterface::getId()
         // usually implemented in your User model.
-        $auth->assign($author, 2);
+        //$auth->assign($author, 2);
         $auth->assign($admin, 1);
     }
 

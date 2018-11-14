@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Receita */
 
-$this->title = $model->id;
+$this->title = $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Receitas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -24,16 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
+    <div class="fundogrid">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'nome',
+            //'id',
+            //'nome',
             'tempo_preparo',
             'descricao_preparo:ntext',
-            'id_categoria',
+            //'id_categoria',
         ],
     ]) ?>
+    </div>
 
 </div>

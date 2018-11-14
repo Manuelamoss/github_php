@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/typeahead.js" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/composer" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/sebastian/global-state" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
+</project>

@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Receita', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+    <div class="fundogrid">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
@@ -27,17 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-
             'id',
             'nome',
             'tempo_preparo',
             'descricao_preparo:ntext',
             ['header'=>'Categoria','attribute'=>'categoria.nome',
-                'headerOptions'=>['style'=>'color:#3277b3'],
-                            ],
-            //'id_categoria'=>['attribute'=>'categoria.nome'],
+                'headerOptions'=>['style'=>'color:#3277b3']],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+    </div>
 </div>

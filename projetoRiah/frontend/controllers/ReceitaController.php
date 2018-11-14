@@ -4,7 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\Receita;
-use yii\data\ActiveDataProvider;
+use frontend\models\ReceitaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,11 +35,11 @@ class ReceitaController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Receita::find(),
-        ]);
+        $searchModel = new ReceitaSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -123,5 +123,13 @@ class ReceitaController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    //action para abrir a view search dentro da view receita/index
+    public function actionSearch(){
+        $searchModel = new ReceitaSearch();
+        return $this->render('_search', [
+            'model' => $searchModel,
+        ]);
     }
 }
