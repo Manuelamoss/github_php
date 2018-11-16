@@ -1,7 +1,7 @@
 body {
     height: 100%;
     width: 100%;
-    background-image:url('board-bunch-cooking-349609.jpg') ;
+    background-image:url('white_wooden_slats-wallpaper-2000x1333.jpg') ;
     background-size:100% 100%;
 }
 
@@ -13,7 +13,7 @@ body {
     text-transform: uppercase;
 }
 
-.fundogrid{
+.fundoBranco{
     padding-left: 20px;
     padding-bottom: 5px;
     padding-top: 10px;
@@ -21,4 +21,16 @@ body {
     background-color: white;
     border-radius: 20px;
 
+}
+.funtoTitulo{
+    background-color: white;
+    background-size: auto;
+    border-radius: 20px;
+}
+
+.fundotexto{
+    background-color: #7d7d7d;
+    background-size: 50%;
+    -webkit-text-fill-color: white;
+    border-radius: 2px;
 }

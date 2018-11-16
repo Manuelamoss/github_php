@@ -1,9 +1,11 @@
+
 <?php
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
+use yii\helpers\Html;
 
-$this->title = 'My Yii Application';
+
 ?>
 <div class="site-index">
 
@@ -11,7 +13,9 @@ $this->title = 'My Yii Application';
 
         <h1>!RIAH!</h1>
 
-        <p class="lead">Bem Vindo a página do administrador. </p>
+        <p class="lead">Receitas com 3 ingredientes apenas!</p>
+        <p class="lead">Encontre a receita perfeita, prática e rápida para se orgulhar de prepará-la!</p>
+
         <p class="lead" id="font" >Utilizador(a): <?php// Yii::$app->user->identity->username ?> </p>
     </div>
 

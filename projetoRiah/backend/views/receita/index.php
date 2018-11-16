@@ -12,31 +12,33 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="receita-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="funtoTitulo" align="center">
+        <h1><?= Html::encode($this->title) ?></h1>
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
 
-    <p>
+    <p align="center">
         <?= Html::a('Create Receita', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <div class="fundogrid">
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'options' => [ 'style' => 'table-layout:fixed;' ],
+    <div class="fundoBranco">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'options' => ['style' => 'table-layout:fixed;'],
 
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'nome',
-            'tempo_preparo',
-            'descricao_preparo:ntext',
-            ['header'=>'Categoria','attribute'=>'categoria.nome',
-                'headerOptions'=>['style'=>'color:#3277b3']],
+                'id',
+                'nome',
+                'tempo_preparo',
+                'descricao_preparo:ntext',
+                ['header' => 'Categoria', 'attribute' => 'categoria.nome',
+                    'headerOptions' => ['style' => 'color:#3277b3']],
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
     </div>
 </div>

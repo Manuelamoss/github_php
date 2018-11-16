@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     </div>
-    <div class="fundogrid">
+    <div class="fundoBranco">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'options' => [ 'style' => 'table-layout:fixed;' ],
@@ -53,12 +53,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'style' => 'color:#3277b3'
                 ],
                 'template' => '{view}',
-                'visibleButtons' => [
+                /*'visibleButtons' => [
                     'view' => function ($model) {
                         $url = Url::to(['receita/index' ]);
                         return Html::a('view', $url, ['class' => 'btn btn-info'] );
                     },
-                ],
+                ],*/
             ],
         ],
     ]); ?>

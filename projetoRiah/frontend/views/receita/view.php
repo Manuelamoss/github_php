@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    <div class="fundogrid">
+    <div class="fundoBranco">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
