@@ -11,7 +11,7 @@ $this->title = 'Utilizadores';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
-    <div class="funtoTitulo" align="center">
+    <div class="fundoTitulo" align="center">
         <h1><?= Html::encode($this->title) ?></h1>
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     </div>
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'headerOptions' => [
                         'style' => 'color:#3277b3'
                     ],
-                    'template' => '{view} Abrir {update} Atualizar']
+                    'template' => '{view} {update}']
 
             ],
         ]); ?>

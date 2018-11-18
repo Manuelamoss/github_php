@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?php // $form->field($model, 'tempo_preparo') ?>
 
-    <?= $form->field($model, 'descricao_preparo') ?>
+    <?= $form->field($model, 'descricao_preparo')->label('Ingrediente 1') ?>
 
     <?php // $form->field($model, 'id_categoria') ?>
 

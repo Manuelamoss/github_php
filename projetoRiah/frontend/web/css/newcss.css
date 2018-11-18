@@ -1,7 +1,7 @@
 body {
     height: 100%;
     width: 100%;
-    background-image:url('board-bunch-cooking-349609.jpg') ;
+    background-image:url('imagens/board-bunch-cooking-349609.jpg') ;
     background-size:100% 100%;
 }
 
@@ -20,5 +20,31 @@ body {
     padding-right: 20px;
     background-color: white;
     border-radius: 20px;
+
+}
+.fundoTitulo{
+    background-color: white;
+    background-size: auto;
+    border-radius: 20px;
+}
+
+.fundologin{
+    background-color: white;
+    background-size: auto;
+    border-radius: 5px;
+}
+
+.fundotexto{
+    background-color: #7d7d7d;
+    background-size: 50%;
+    -webkit-text-fill-color: white;
+    border-radius: 2px;
+}
+
+.btnEntrar{
+    color: #4cae4c;
+    size: 30px;
+}
+.logo{
 
 }

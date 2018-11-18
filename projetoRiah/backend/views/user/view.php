@@ -11,12 +11,12 @@ $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
-    <div class="funtoTitulo" align="center">
+    <div class="fundoTitulo" align="center">
         <h1>Username: <?= Html::encode($this->title) ?></h1>
     </div>
 
     <p align="center">
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <!--utilizador não pode ser deletado-->
         <?php /*Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',

@@ -48,9 +48,10 @@ class Receita extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'tempo_preparo' => 'Tempo Preparo',
-            'descricao_preparo' => 'Descricao Preparo',
+            'tempo_preparo' => 'Tempo de Preparo',
+            'descricao_preparo' => 'Descricao do Preparo',
             'categoria.nome' => 'Categoria',
+
         ];
     }
 
