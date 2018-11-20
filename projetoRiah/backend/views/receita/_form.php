@@ -23,6 +23,7 @@ use yii\widgets\ActiveForm;
     <div class="form-group">
         <br>
         <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('voltar', ['receita/index'], ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -12,17 +12,17 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="receita-view">
     <div class="fundoTitulo" align="center">
-    <h1>Receita: <?= Html::encode($this->title) ?></h1>
+        <h1>Receita: <?= Html::encode($this->title) ?></h1>
     </div>
     <p>
-        <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
+        <?php // Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?php /* Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Tem certeza que deseja deletar esta receita?',
                 'method' => 'post',
             ],
-        ]) ?>
+        ])*/ ?>
     </p>
     <div class="fundoBranco">
         <?= DetailView::widget([
@@ -36,5 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </div>
-
+    <br>
+    <p><?= Html::a('voltar', ['receita/index'], ['class' => 'btn btn-primary']) ?></p>
 </div>

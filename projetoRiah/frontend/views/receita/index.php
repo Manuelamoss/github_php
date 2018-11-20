@@ -2,9 +2,10 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
+/* @var $searchModel common\models\ReceitaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Pesquisa por ingredientes';
@@ -21,12 +22,12 @@ $this->title = 'Pesquisa por ingredientes';
     <!--TODO: fazer 3 campos de pesquisa que busque dentro do campo descrição_preparo-->
     <div class="receita-create">
 
-        <h4> Escreva nos campos ao menos 1 ingrediente para a pesquisa.</h4>
+        <h4> Para pesquisar escreva no campo abaixo até 3 ingredientes separados por espaços.</h4>
 
         <?= $this->render('_search', [
             'model' => $searchModel,
-        ]) ?>
 
+        ]) ?>
 
     </div>
     <div class="fundoBranco">
@@ -36,16 +37,24 @@ $this->title = 'Pesquisa por ingredientes';
             //'filterModel' => $searchModel,
             'columns' => [
                 'nome',
+                [   //é exibido os primeiros 100 caracteres
+                    'attribute' => 'descricao_preparo',
+                    'value' => function ($model, $key, $index, $column) {
+                        return StringHelper::truncate($model->descricao_preparo, 100);
+                    },
+                    'format' => 'ntext',
+                ],
 
                 ['class' => 'yii\grid\ActionColumn',
                     'header' => "Ver",
                     'headerOptions' => [
                         'style' => 'color:#3277b3'
                     ],
+
                     'template' => '{view}',
                     'contentOptions' => ['style' => 'max-width: 100px;'],
-
                 ],
+
             ],
         ]); ?>
     </div>

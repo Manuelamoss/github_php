@@ -9,9 +9,11 @@ use common\models\Receita;
 
 /**
  * ReceitaSearch represents the model behind the search form of `common\models\Receita`.
+ *
  */
 class ReceitaSearch extends Receita
 {
+
     /**
      * {@inheritdoc}
      */
@@ -63,9 +65,22 @@ class ReceitaSearch extends Receita
             'id_categoria' => $this->id_categoria,
         ]);
 
-        $query->andFilterWhere(['like', 'nome', $this->nome])
+        $palavras = explode(" ", $this->descricao_preparo);
+        //andFilterWhere para pesquisar somente dentro de cada receita
+        foreach ($palavras as $key) {
+            $query->orFilterWhere(
+                ['like', 'descricao_preparo', $key]
+            );
+        }
+
+        //$query->orFilterWhere(['like', 'descricao_preparo', $palavras]);
+
+        /*$query->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'tempo_preparo', $this->tempo_preparo])
-            ->andFilterWhere(['like', 'descricao_preparo', $this->descricao_preparo]);
+            //->andFilterWhere(['like', 'descricao_preparo',$this->ingredientes ]);
+            ->andFilterWhere(['like', 'descricao_preparo', $this->ingredientes[0]])
+            ->andFilterWhere(['like', 'descricao_preparo', $this->ingredientes[1]])
+            ->andFilterWhere(['like', 'descricao_preparo', $this->ingredientes[2]]);*/
 
         return $dataProvider;
     }

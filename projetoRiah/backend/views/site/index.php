@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
 $this->title = 'RIAH!';
 
-if (Yii::$app->user->id) {
+if (!Yii::$app->user->id) {
     ?>
     <h4>Para ver a receita é necessário fazer login.</h4>
     <?php

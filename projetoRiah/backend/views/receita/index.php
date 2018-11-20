@@ -34,7 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['header' => 'id',
                     'headerOptions' => ['style' => 'color:#3277b3'],
                     'value' => 'id',
-                    'contentOptions' => ['style' => 'max-width: 100px;']],
+                    'contentOptions' => ['style' => 'max-width: 100px;'],
+                ],
 
                 ['header' => 'Nome', 'attribute' => 'nome',
                     'headerOptions' => ['style' => 'color:#3277b3'],
@@ -57,7 +58,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 ['header' => 'Categoria', 'attribute' => 'categoria.nome',
                     'headerOptions' => ['style' => 'color:#3277b3'],
-                    'contentOptions' => ['style' => 'max-width: 100px;']
+                    'contentOptions' => ['style' => 'max-width: 100px;'],
+                   // 'filter'=> Html::listBox(CategoriaSearch::Search()->findAll(), 'nome','almoço','pequeno almoço'),
                 ],
 
                 ['class' => 'yii\grid\ActionColumn',

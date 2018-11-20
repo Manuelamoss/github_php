@@ -4,7 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\Receita;
-use frontend\models\ReceitaSearch;
+use common\models\ReceitaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -125,11 +125,5 @@ class ReceitaController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    //action para abrir a view search dentro da view receita/index
-    public function actionSearch(){
-        $searchModel = new ReceitaSearch();
-        return $this->render('_search', [
-            'model' => $searchModel,
-        ]);
-    }
+
 }
