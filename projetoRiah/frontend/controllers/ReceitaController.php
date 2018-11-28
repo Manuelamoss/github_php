@@ -33,14 +33,20 @@ class ReceitaController extends Controller
      * Lists all Receita models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($flag)
     {
+        $mensagemErro=' ';
+        if($flag == 0){
+            $mensagemErro = 'Deve-se fazer login para ver o conteudo.';
+        }
         $searchModel = new ReceitaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'mensagemErro' => $mensagemErro,
+            'flag' => $flag
         ]);
     }
 
@@ -52,6 +58,9 @@ class ReceitaController extends Controller
      */
     public function actionView($id)
     {
+        if(yii::$app->user->isGuest){
+            return $this->redirect(['index', 'flag' => 0]);
+        }
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -124,6 +133,4 @@ class ReceitaController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
-
 }

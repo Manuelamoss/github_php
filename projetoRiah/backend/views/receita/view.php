@@ -14,12 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="fundoTitulo" align="center">
         <h1>Receita: <?= Html::encode($this->title) ?></h1>
     </div>
+
+
     <p>
         <?php // Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?php /* Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Tem certeza que deseja deletar esta receita?',
+                'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ])*/ ?>
@@ -33,9 +35,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'tempo_preparo',
                 'descricao_preparo:ntext',
                 'id_categoria',
+                'curtir',
+                'descurtir',
             ],
         ]) ?>
+
     </div>
-    <br>
-    <p><?= Html::a('voltar', ['receita/index'], ['class' => 'btn btn-primary']) ?></p>
 </div>
+<br>
+<p><?= Html::a('voltar', ['receita/index'], ['class' => 'btn btn-primary']) ?></p>

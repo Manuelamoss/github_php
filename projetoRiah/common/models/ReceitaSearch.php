@@ -9,18 +9,16 @@ use common\models\Receita;
 
 /**
  * ReceitaSearch represents the model behind the search form of `common\models\Receita`.
- *
  */
 class ReceitaSearch extends Receita
 {
-
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id', 'id_categoria'], 'integer'],
+            [['id', 'id_categoria', 'curtir', 'descurtir'], 'integer'],
             [['nome', 'tempo_preparo', 'descricao_preparo'], 'safe'],
         ];
     }
@@ -63,6 +61,8 @@ class ReceitaSearch extends Receita
         $query->andFilterWhere([
             'id' => $this->id,
             'id_categoria' => $this->id_categoria,
+            'curtir' => $this->curtir,
+            'descurtir' => $this->descurtir,
         ]);
 
         $palavras = explode(" ", $this->descricao_preparo);
@@ -73,15 +73,10 @@ class ReceitaSearch extends Receita
             );
         }
 
-        //$query->orFilterWhere(['like', 'descricao_preparo', $palavras]);
-
         /*$query->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'tempo_preparo', $this->tempo_preparo])
-            //->andFilterWhere(['like', 'descricao_preparo',$this->ingredientes ]);
-            ->andFilterWhere(['like', 'descricao_preparo', $this->ingredientes[0]])
-            ->andFilterWhere(['like', 'descricao_preparo', $this->ingredientes[1]])
-            ->andFilterWhere(['like', 'descricao_preparo', $this->ingredientes[2]]);*/
-
+            ->andFilterWhere(['like', 'descricao_preparo', $this->descricao_preparo]);
+        */
         return $dataProvider;
     }
 }

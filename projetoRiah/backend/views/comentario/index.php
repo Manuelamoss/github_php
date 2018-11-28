@@ -4,26 +4,31 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
+/* @var $searchModel common\models\ComentarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Classificacaos';
+$this->title = 'Comentarios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="classificacao-index">
+<div class="comentario-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Classificacao', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Comentario', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'nome',
+            'descricao:ntext',
+            'id_receita',
+            'id_user',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

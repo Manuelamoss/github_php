@@ -3,13 +3,23 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\StringHelper;
+use yii\bootstrap\Alert;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ReceitaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pesquisa por ingredientes';
+$this->title = 'Receitas';
 //$this->params['breadcrumbs'][] = $this->title;
+?>
+<?php if ($flag == 0) {
+    echo Alert::widget([
+        'options' => [
+            'class' => 'alert-danger',
+        ],
+        'body' => $mensagemErro,
+    ]);
+}
 ?>
 <div class="receita-index">
 
@@ -54,10 +64,7 @@ $this->title = 'Pesquisa por ingredientes';
                     'template' => '{view}',
                     'contentOptions' => ['style' => 'max-width: 100px;'],
                 ],
-
             ],
         ]); ?>
     </div>
-
-    <?php ?>
 </div>

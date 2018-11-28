@@ -17,10 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     </div>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p align="center">
         <?= Html::a('Criar Receita', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <p>
 
     <div class="fundoBranco">
         <?= GridView::widget([
@@ -59,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['header' => 'Categoria', 'attribute' => 'categoria.nome',
                     'headerOptions' => ['style' => 'color:#3277b3'],
                     'contentOptions' => ['style' => 'max-width: 100px;'],
-                   // 'filter'=> Html::listBox(CategoriaSearch::Search()->findAll(), 'nome','almoço','pequeno almoço'),
+                    // 'filter'=> Html::listBox(CategoriaSearch::Search()->findAll(), 'nome','almoço','pequeno almoço'),
                 ],
 
                 ['class' => 'yii\grid\ActionColumn',

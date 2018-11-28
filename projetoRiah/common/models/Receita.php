@@ -12,8 +12,10 @@ use Yii;
  * @property string $tempo_preparo
  * @property string $descricao_preparo
  * @property int $id_categoria
+ * @property int $curtir
+ * @property int $descurtir
  *
- * @property ClassificacaoReceitas[] $classificacaoReceitas
+ * @property Comentario[] $comentarios
  * @property Categoria $categoria
  */
 class Receita extends \yii\db\ActiveRecord
@@ -32,9 +34,9 @@ class Receita extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'tempo_preparo', 'descricao_preparo', 'id_categoria'], 'required'],
+            [['nome', 'tempo_preparo', 'descricao_preparo', 'id_categoria', 'curtir', 'descurtir'], 'required'],
             [['descricao_preparo'], 'string'],
-            [['id_categoria'], 'integer'],
+            [['id_categoria', 'curtir', 'descurtir'], 'integer'],
             [['nome', 'tempo_preparo'], 'string', 'max' => 20],
             [['id_categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categoria::className(), 'targetAttribute' => ['id_categoria' => 'id']],
         ];
@@ -51,16 +53,17 @@ class Receita extends \yii\db\ActiveRecord
             'tempo_preparo' => 'Tempo de Preparo',
             'descricao_preparo' => 'Descricao do Preparo',
             'categoria.nome' => 'Categoria',
-
+            'curtir' => 'Curtir',
+            'descurtir' => 'Descurtir',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getClassificacaoReceitas()
+    public function getComentarios()
     {
-        return $this->hasMany(ClassificacaoReceitas::className(), ['id_receitas' => 'id']);
+        return $this->hasMany(Comentario::className(), ['id_receita' => 'id']);
     }
 
     /**

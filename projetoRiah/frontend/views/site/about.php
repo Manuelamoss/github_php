@@ -10,10 +10,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about" align="center">
     <h1><?= Html::encode($this->title) ?></h1>
-    <br>
-    <h4>Projeto em Sistemas de Informação.</h4>
-    <h4>Website desenvolvido por Manuela Moss Martinez aluna do curso de Programação de Sistemas.</h4>
-    <h4>Instituto Politécnico de Leiria</h4>
 
-    <?= Html::img('@web/imagens/logo.png',['alt'=>'my logo']) ?>
+    <h3>Website desenvolvido por Manuela Moss Martinez.</h3>
+    <h3>Aluna do curso de Programação de Sistemas da informação.</h3>
+
+
+    <?= Html::img('@web/css/imagens/logo.png',['alt'=>'my logo']) ?>
 </div>

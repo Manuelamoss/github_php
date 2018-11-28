@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Classificacao */
+/* @var $model common\models\Comentario */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Classificacaos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Comentarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="classificacao-view">
+<div class="comentario-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,7 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'nome',
+            'descricao:ntext',
+            'id_receita',
+            'id_user',
         ],
     ]) ?>
 

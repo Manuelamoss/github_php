@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\ClassificacaoReceitas;
-use common\models\ClassificacaoReceitasSearch;
+use common\models\Comentario;
+use common\models\ComentarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ClassificacaoReceitasController implements the CRUD actions for ClassificacaoReceitas model.
+ * ComentarioController implements the CRUD actions for Comentario model.
  */
-class ClassificacaoReceitasController extends Controller
+class ComentarioController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class ClassificacaoReceitasController extends Controller
     }
 
     /**
-     * Lists all ClassificacaoReceitas models.
+     * Lists all Comentario models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ClassificacaoReceitasSearch();
+        $searchModel = new ComentarioSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class ClassificacaoReceitasController extends Controller
     }
 
     /**
-     * Displays a single ClassificacaoReceitas model.
+     * Displays a single Comentario model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class ClassificacaoReceitasController extends Controller
     }
 
     /**
-     * Creates a new ClassificacaoReceitas model.
+     * Creates a new Comentario model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ClassificacaoReceitas();
+        $model = new Comentario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class ClassificacaoReceitasController extends Controller
     }
 
     /**
-     * Updates an existing ClassificacaoReceitas model.
+     * Updates an existing Comentario model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class ClassificacaoReceitasController extends Controller
     }
 
     /**
-     * Deletes an existing ClassificacaoReceitas model.
+     * Deletes an existing Comentario model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class ClassificacaoReceitasController extends Controller
     }
 
     /**
-     * Finds the ClassificacaoReceitas model based on its primary key value.
+     * Finds the Comentario model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ClassificacaoReceitas the loaded model
+     * @return Comentario the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ClassificacaoReceitas::findOne($id)) !== null) {
+        if (($model = Comentario::findOne($id)) !== null) {
             return $model;
         }
 

@@ -1,18 +1,18 @@
 <?php
 
-namespace backend\controllers;
+namespace frontend\controllers;
 
 use Yii;
-use common\models\Classificacao;
-use common\models\ClassificacaoSearch;
+use common\models\Comentario;
+use common\models\ComentarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ClassificacaoController implements the CRUD actions for Classificacao model.
+ * ComentarioController implements the CRUD actions for Comentario model.
  */
-class ClassificacaoController extends Controller
+class ComentarioController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class ClassificacaoController extends Controller
     }
 
     /**
-     * Lists all Classificacao models.
+     * Lists all Comentario models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ClassificacaoSearch();
+        $searchModel = new ComentarioSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class ClassificacaoController extends Controller
     }
 
     /**
-     * Displays a single Classificacao model.
+     * Displays a single Comentario model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class ClassificacaoController extends Controller
     }
 
     /**
-     * Creates a new Classificacao model.
+     * Creates a new Comentario model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Classificacao();
+        $model = new Comentario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class ClassificacaoController extends Controller
     }
 
     /**
-     * Updates an existing Classificacao model.
+     * Updates an existing Comentario model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class ClassificacaoController extends Controller
     }
 
     /**
-     * Deletes an existing Classificacao model.
+     * Deletes an existing Comentario model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class ClassificacaoController extends Controller
     }
 
     /**
-     * Finds the Classificacao model based on its primary key value.
+     * Finds the Comentario model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Classificacao the loaded model
+     * @return Comentario the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Classificacao::findOne($id)) !== null) {
+        if (($model = Comentario::findOne($id)) !== null) {
             return $model;
         }
 

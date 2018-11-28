@@ -45,6 +45,8 @@ body {
     color: #4cae4c;
     size: 30px;
 }
-.logo{
+.textoErro{
+    background-color:lightpink;
+    background-size: 50px;
 
 }

@@ -23,7 +23,7 @@ use yii\helpers\Html;
 
         <div class="row">
             <div align="center">
-                <p><a class="btn btn-default" href= <?= Url::to(['receita/index']) ?>>Entrar &raquo;</a></p>
+                <p><a class="btn btn-default" href= <?= Url::to(['receita/index', 'flag' => 1]) ?>>Entrar &raquo;</a></p>
             </div>
 
         </div>
