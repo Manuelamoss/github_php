@@ -36,7 +36,7 @@ class Receita extends \yii\db\ActiveRecord
         return [
             [['nome', 'tempo_preparo', 'descricao_preparo', 'id_categoria', 'curtir', 'descurtir'], 'required'],
             [['descricao_preparo'], 'string'],
-            [['id_categoria', 'curtir', 'descurtir'], 'integer'],
+            [['id_categoria','curtir','descurtir'], 'integer'],
             [['nome', 'tempo_preparo'], 'string', 'max' => 20],
             [['id_categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categoria::className(), 'targetAttribute' => ['id_categoria' => 'id']],
         ];

@@ -77,7 +77,7 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->loginAdmin()) {
             return $this->goBack();
         } else {
             $model->password = '';
@@ -99,10 +99,6 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    //pagina do administrador
-    public function actionHomeadmin()
-    {
-        return $this->redirect('homeadmin');
-    }
+
 }
         

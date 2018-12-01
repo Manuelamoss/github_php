@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = 'Sobre';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about" align="center">
     <h1><?= Html::encode($this->title) ?></h1>

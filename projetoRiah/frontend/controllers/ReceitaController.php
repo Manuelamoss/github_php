@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Receita;
 use common\models\ReceitaSearch;
+use common\models\Curtidas;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -33,10 +34,10 @@ class ReceitaController extends Controller
      * Lists all Receita models.
      * @return mixed
      */
-    public function actionIndex($flag)
+    public function actionIndex($flag = 1)
     {
-        $mensagemErro=' ';
-        if($flag == 0){
+        $mensagemErro = ' ';
+        if ($flag == 0) {
             $mensagemErro = 'Deve-se fazer login para ver o conteudo.';
         }
         $searchModel = new ReceitaSearch();
@@ -58,11 +59,17 @@ class ReceitaController extends Controller
      */
     public function actionView($id)
     {
-        if(yii::$app->user->isGuest){
+        $like = Curtidas::find()->where(['id_receita' => $id,'id_user' => Yii::$app->user->id, 'status' => 1])->one();
+        $dislike = Curtidas::find()->where(['id_receita' => $id,'id_user' => Yii::$app->user->id, 'status' => -1])->one();
+
+
+        if (yii::$app->user->isGuest) {
             return $this->redirect(['index', 'flag' => 0]);
         }
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'like'=>$like,
+            'dislike'=>$dislike
         ]);
     }
 
@@ -82,6 +89,49 @@ class ReceitaController extends Controller
         return $this->render('create', [
             'model' => $model,
         ]);
+    }
+
+
+    public function actionTestPjax1($receita_id = null, $like = null)
+    {
+
+        // try get like per post
+        if (!empty($receita_id) && !Yii::$app->user->isGuest) {
+            $curtida = Curtidas::find()->where(['id_receita' => $receita_id,'id_user' => Yii::$app->user->id, 'status' => $like])->one();
+
+            $data = Receita::find()->where(['id' => $receita_id])->one();
+
+            if (!empty($like) && empty($curtida)) {
+                $novaCurtida = new Curtidas();
+                $novaCurtida->id_user = Yii::$app->user->id;
+                $novaCurtida->id_receita = $receita_id;
+                $novaCurtida->status = $like;
+                $novaCurtida->save();
+
+                // set from like /dislike
+                if (empty($data)) {
+                    // new record
+                    $data = new Receita();
+                    $data->id = $receita_id;
+                }
+
+                if ($like < 0) {
+                    $data->descurtir = $data->descurtir + 1;
+                } else {
+                    $data->curtir = $data->curtir + 1;
+                }
+                $data->save();
+            } else {
+                $curtida->delete();
+                if ($like < 0) {
+                    $data->descurtir = $data->descurtir - 1;
+                } else {
+                    $data->curtir = $data->curtir - 1;
+                }
+                $data->save();
+            }
+        }
+        return $this->redirect(['view', 'id' => $receita_id]);
     }
 
     /**

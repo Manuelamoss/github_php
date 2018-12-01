@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\StringHelper;
+use common\models\CategoriaSearch;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ReceitaSearch */
@@ -60,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['header' => 'Categoria', 'attribute' => 'categoria.nome',
                     'headerOptions' => ['style' => 'color:#3277b3'],
                     'contentOptions' => ['style' => 'max-width: 100px;'],
-                    // 'filter'=> Html::listBox(CategoriaSearch::Search()->findAll(), 'nome','almoço','pequeno almoço'),
+                     //'filter'=> Html::listBox(CategoriaSearch::Search()->findAll(), 'nome','almoço','pequeno almoço'),
                 ],
 
                 ['class' => 'yii\grid\ActionColumn',
