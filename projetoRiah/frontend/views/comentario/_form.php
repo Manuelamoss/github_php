@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\models\Receita;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Comentario */
@@ -14,13 +15,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'descricao')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'id_receita')->textInput() ?>
-
-    <?= $form->field($model, 'id_user')->textInput() ?>
-
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
     </div>
+
+
+
 
     <?php ActiveForm::end(); ?>
 

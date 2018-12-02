@@ -71,6 +71,9 @@ $this->title = $model->nome;
     <?= Html::a('voltar', ['receita/index',], ['class' => 'btn btn-primary']) ?>
 </div>
 <br>
+<p>
+    <?= Html::a('Comentar', ['comentario/create'], ['class' => 'btn btn-success']) ?>
+</p>
 <div class="fundoBranco">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

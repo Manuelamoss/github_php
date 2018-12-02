@@ -31,7 +31,7 @@ class Comentario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['descricao', 'id_receita', 'id_user'], 'required'],
+            [['descricao'], 'required'],
             [['descricao'], 'string'],
             [['id_receita', 'id_user'], 'integer'],
             [['id_receita'], 'exist', 'skipOnError' => true, 'targetClass' => Receita::className(), 'targetAttribute' => ['id_receita' => 'id']],
@@ -46,7 +46,7 @@ class Comentario extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'descricao' => 'Comentarios',
+            'descricao' => 'Descrição',
             'id_receita' => 'Id Receita',
             'user.username' => 'Id User',
         ];

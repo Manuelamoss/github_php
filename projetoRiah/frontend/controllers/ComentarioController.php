@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Receita;
 use Yii;
 use common\models\Comentario;
 use common\models\ComentarioSearch;
@@ -55,6 +56,12 @@ class ComentarioController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+    }
+
+    public function actionVoltar($id){
+
+        return $this->render('receita/view', ['id' =>$id]);
+
     }
 
     /**
