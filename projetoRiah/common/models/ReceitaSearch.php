@@ -73,10 +73,11 @@ class ReceitaSearch extends Receita
             );
         }
 
-        /*$query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'tempo_preparo', $this->tempo_preparo])
-            ->andFilterWhere(['like', 'descricao_preparo', $this->descricao_preparo]);
-        */
+        $query->andFilterWhere(['like', 'tempo_preparo', $this->tempo_preparo]);
+
+            //->andFilterWhere(['like', 'nome', $this->nome])
+            //->andFilterWhere(['like', 'descricao_preparo', $this->descricao_preparo]);
+
         return $dataProvider;
     }
 }

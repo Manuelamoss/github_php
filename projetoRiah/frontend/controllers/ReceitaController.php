@@ -6,9 +6,12 @@ use Yii;
 use common\models\Receita;
 use common\models\ReceitaSearch;
 use common\models\Curtidas;
+use common\models\Comentario;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
+use yii\web\Request;
 
 /**
  * ReceitaController implements the CRUD actions for Receita model.
@@ -59,17 +62,25 @@ class ReceitaController extends Controller
      */
     public function actionView($id)
     {
-        $like = Curtidas::find()->where(['id_receita' => $id,'id_user' => Yii::$app->user->id, 'status' => 1])->one();
-        $dislike = Curtidas::find()->where(['id_receita' => $id,'id_user' => Yii::$app->user->id, 'status' => -1])->one();
-
+        $like = Curtidas::find()->where(['id_receita' => $id, 'id_user' => Yii::$app->user->id, 'status' => 1])->one();
+        $dislike = Curtidas::find()->where(['id_receita' => $id, 'id_user' => Yii::$app->user->id, 'status' => -1])->one();
 
         if (yii::$app->user->isGuest) {
             return $this->redirect(['index', 'flag' => 0]);
         }
+
+
+        $comment = Comentario::find()->where(['id_receita' => $id]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $comment,
+        ]);
+
+
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'like'=>$like,
-            'dislike'=>$dislike
+            'like' => $like,
+            'dislike' => $dislike,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -92,12 +103,12 @@ class ReceitaController extends Controller
     }
 
 
-    public function actionTestPjax1($receita_id = null, $like = null)
+    public function actionCurtidas($receita_id = null, $like = null)
     {
 
         // try get like per post
         if (!empty($receita_id) && !Yii::$app->user->isGuest) {
-            $curtida = Curtidas::find()->where(['id_receita' => $receita_id,'id_user' => Yii::$app->user->id, 'status' => $like])->one();
+            $curtida = Curtidas::find()->where(['id_receita' => $receita_id, 'id_user' => Yii::$app->user->id, 'status' => $like])->one();
 
             $data = Receita::find()->where(['id' => $receita_id])->one();
 
@@ -182,5 +193,13 @@ class ReceitaController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionFiltrarListaReceita()
+    {
+        $searchModel = new ReceitaSearch();
+        if (Yii::$app->request->isPost) {
+
+        }
     }
 }

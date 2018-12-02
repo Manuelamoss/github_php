@@ -46,9 +46,9 @@ class Comentario extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'descricao' => 'Descricao',
+            'descricao' => 'Comentarios',
             'id_receita' => 'Id Receita',
-            'id_user' => 'Id User',
+            'user.username' => 'Id User',
         ];
     }
 

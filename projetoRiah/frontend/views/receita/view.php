@@ -2,8 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use yii\widgets\ActiveForm;
-use \yii\widgets\Pjax;
+use yii\grid\GridView;
 
 
 /* @var $this yii\web\View */
@@ -23,18 +22,18 @@ $this->title = $model->nome;
         echo "&nbsp; &nbsp;";
 
         if (empty($like)) {
-            echo Html::a(Html::img('css/imagens/like.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/test-pjax1', 'receita_id' => $model->id, 'like' => 1]);
+            echo Html::a(Html::img('css/imagens/like.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
         } else {
-            echo Html::a(Html::img('css/imagens/like_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/test-pjax1', 'receita_id' => $model->id, 'like' => 1]);
+            echo Html::a(Html::img('css/imagens/like_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
         } ?>
         &nbsp;
         <?php echo Html::label($model->descurtir);
         echo "&nbsp; &nbsp;";
         if (empty($dislike)) {
-            echo Html::a(Html::img('css/imagens/dislike.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/test-pjax1', 'receita_id' => $model->id, 'like' => -1]);
+            echo Html::a(Html::img('css/imagens/dislike.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => -1]);
 
         } else {
-            echo Html::a(Html::img('css/imagens/dislike_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/test-pjax1', 'receita_id' => $model->id, 'like' => -1]);
+            echo Html::a(Html::img('css/imagens/dislike_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => -1]);
         } ?>
 
     </div>
@@ -66,6 +65,32 @@ $this->title = $model->nome;
         ],
     ]) ?>
 
-    <br>
+</div>
+<br>
+<div>
     <?= Html::a('voltar', ['receita/index',], ['class' => 'btn btn-primary']) ?>
+</div>
+<br>
+<div class="fundoBranco">
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        //'filterModel' => $searchModel,
+        'columns' => [
+            //['class' => 'yii\grid\SerialColumn'],
+
+            //'id',
+            'descricao:ntext',
+            //'id_receita',
+            ['header' => 'Utilizador', 'attribute' => 'user.username',
+                'headerOptions' => ['style' => 'color:#3277b3']
+            ],
+            ['class' => 'yii\grid\ActionColumn',
+                'header' => "Ações",
+                'headerOptions' => [
+                    'style' => 'color:#3277b3'
+                ],
+                'template' => '{update} {delete}',
+            ],
+        ],
+    ]); ?>
 </div>

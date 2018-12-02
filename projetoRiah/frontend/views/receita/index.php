@@ -4,6 +4,8 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\StringHelper;
 use yii\bootstrap\Alert;
+use common\models\ReceitaSearch;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ReceitaSearch */
@@ -25,19 +27,13 @@ $this->title = 'Receitas';
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <!--<p>
-        <?php // Html::a('Create Receita', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>-->
-
-    <!--TODO: fazer 3 campos de pesquisa que busque dentro do campo descrição_preparo-->
     <div class="receita-create">
-
-        <h4> Para pesquisar escreva no campo abaixo até 3 ingredientes separados por espaços.</h4>
 
         <?= $this->render('_search', [
             'model' => $searchModel,
 
         ]) ?>
+
 
     </div>
     <div class="fundoBranco">
@@ -54,7 +50,7 @@ $this->title = 'Receitas';
                     },
                     'format' => 'ntext',
                 ],
-
+                'tempo_preparo',
                 ['class' => 'yii\grid\ActionColumn',
                     'header' => "Ver",
                     'headerOptions' => [
