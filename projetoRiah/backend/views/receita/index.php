@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\StringHelper;
+use yii\helpers\ArrayHelper;
 use common\models\CategoriaSearch;
 
 /* @var $this yii\web\View */
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 [   //é exibido os primeiros 100 caracteres
                     'attribute' => 'descricao_preparo',
-                    'value' => function ($model, $key, $index, $column) {
+                    'value' => function ($model) {
                         return StringHelper::truncate($model->descricao_preparo, 100);
                     },
                     'format' => 'ntext',
@@ -61,7 +62,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['header' => 'Categoria', 'attribute' => 'categoria.nome',
                     'headerOptions' => ['style' => 'color:#3277b3'],
                     'contentOptions' => ['style' => 'max-width: 100px;'],
-                     //'filter'=> Html::listBox(CategoriaSearch::Search()->findAll(), 'nome','almoço','pequeno almoço'),
+                    'filter'=>Html::activeDropDownList($searchModel, 'id', ArrayHelper::map(CategoriaSearch::find()->asArray()->all(), 'id', 'nome'),['class'=>'form-control','prompt' => 'Selecione Categoria']),
+
                 ],
 
                 ['class' => 'yii\grid\ActionColumn',
