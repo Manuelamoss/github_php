@@ -58,9 +58,10 @@ class ComentarioController extends Controller
         ]);
     }
 
-    public function actionVoltar($id){
+    public function actionSalvarComentario($id)
+    {
 
-        return $this->render('receita/view', ['id' =>$id]);
+        return $this->render('receita/view', ['id' => $id]);
 
     }
 
@@ -69,17 +70,20 @@ class ComentarioController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id_receita)
     {
         $model = new Comentario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'id' => $id_receita
         ]);
+
     }
 
     /**

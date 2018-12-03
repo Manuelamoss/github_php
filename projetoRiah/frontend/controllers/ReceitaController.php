@@ -106,7 +106,7 @@ class ReceitaController extends Controller
     public function actionCurtidas($receita_id = null, $like = null)
     {
 
-        // try get like per post
+        // try get like per recipe
         if (!empty($receita_id) && !Yii::$app->user->isGuest) {
             $curtida = Curtidas::find()->where(['id_receita' => $receita_id, 'id_user' => Yii::$app->user->id, 'status' => $like])->one();
 
@@ -119,13 +119,13 @@ class ReceitaController extends Controller
                 $novaCurtida->status = $like;
                 $novaCurtida->save();
 
-                // set from like /dislike
+
                 if (empty($data)) {
                     // new record
                     $data = new Receita();
                     $data->id = $receita_id;
                 }
-
+                // set from like /dislike
                 if ($like < 0) {
                     $data->descurtir = $data->descurtir + 1;
                 } else {

@@ -14,7 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="fundoTitulo" align="center">
         <h1><?= Html::encode($this->title) ?></h1>
-        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
     </div>
 
     <p align="center">
@@ -26,8 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                //['class' => 'yii\grid\SerialColumn'],
-
                 ['header' => 'id',
                     'headerOptions' => ['style' => 'color:#3277b3'],
                     'value' => 'id',
@@ -37,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\ActionColumn',
                     'header' => "Ações",
                     'headerOptions' => [
-                        'style' => 'color:#3277b3'
+                        'style' => 'color:#3277b3',
                     ],
                 ],
             ],

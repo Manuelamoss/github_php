@@ -15,6 +15,7 @@ $this->title = 'Criar Comentário';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'id' => $id
     ]) ?>
 
 </div>

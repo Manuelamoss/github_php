@@ -72,7 +72,7 @@ $this->title = $model->nome;
 </div>
 <br>
 <p>
-    <?= Html::a('Comentar', ['comentario/create'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Comentar', ['comentario/create', 'id_receita' => $model->id], ['class' => 'btn btn-success']) ?>
 </p>
 <div class="fundoBranco">
     <?= GridView::widget([

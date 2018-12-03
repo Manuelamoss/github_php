@@ -18,13 +18,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <p align="center">
         <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <!--utilizador não pode ser deletado-->
-        <?php /*Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
-        ])*/ ?>
+        ]) ?>
     </p>
 
     <div class="fundoBranco">

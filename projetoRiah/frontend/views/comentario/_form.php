@@ -15,6 +15,11 @@ use common\models\Receita;
 
     <?= $form->field($model, 'descricao')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'id_receita')->hiddenInput(['value'=> $id])->label(false); ?>
+    <?= $form->field($model, 'id_user')->hiddenInput(['value'=> Yii::$app->user->id])->label(false); ?>
+
+
+
     <div class="form-group">
         <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
     </div>
