@@ -12,6 +12,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 use yii\web\Request;
+use yii\helpers\Url;
 
 /**
  * ReceitaController implements the CRUD actions for Receita model.
@@ -82,6 +83,7 @@ class ReceitaController extends Controller
             'dislike' => $dislike,
             'dataProvider' => $dataProvider,
         ]);
+
     }
 
     /**

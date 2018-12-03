@@ -22,6 +22,7 @@ use common\models\Receita;
 
     <div class="form-group">
         <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('voltar',['voltar'],['class' => 'btn btn-success']) ?>
     </div>
 
 

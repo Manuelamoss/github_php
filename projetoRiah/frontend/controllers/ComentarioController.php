@@ -9,6 +9,8 @@ use common\models\ComentarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
+
 
 /**
  * ComentarioController implements the CRUD actions for Comentario model.
@@ -58,10 +60,10 @@ class ComentarioController extends Controller
         ]);
     }
 
-    public function actionSalvarComentario($id)
+    public function actionVoltar()
     {
 
-        return $this->render('receita/view', ['id' => $id]);
+        return $this->redirect(Yii::$app->request->referrer);
 
     }
 
@@ -76,7 +78,7 @@ class ComentarioController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['receita/view', 'id' => $model->id_receita]);
         }
 
         return $this->render('create', [
