@@ -19,6 +19,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'descricao') ?>
 
+    <?= $form->field($model, 'data_hora') ?>
+
     <?= $form->field($model, 'id_receita') ?>
 
     <?= $form->field($model, 'id_user') ?>

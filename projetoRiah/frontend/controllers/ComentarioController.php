@@ -2,15 +2,13 @@
 
 namespace frontend\controllers;
 
-use common\models\Receita;
 use Yii;
 use common\models\Comentario;
 use common\models\ComentarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Url;
-
+use common\models\Receita;
 
 /**
  * ComentarioController implements the CRUD actions for Comentario model.
@@ -60,13 +58,6 @@ class ComentarioController extends Controller
         ]);
     }
 
-    public function actionVoltar()
-    {
-
-        return $this->redirect(Yii::$app->request->referrer);
-
-    }
-
     /**
      * Creates a new Comentario model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -77,7 +68,6 @@ class ComentarioController extends Controller
         $model = new Comentario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-
             return $this->redirect(['receita/view', 'id' => $model->id_receita]);
         }
 
@@ -85,7 +75,6 @@ class ComentarioController extends Controller
             'model' => $model,
             'id' => $id_receita
         ]);
-
     }
 
     /**

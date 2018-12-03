@@ -19,7 +19,7 @@ class ComentarioSearch extends Comentario
     {
         return [
             [['id', 'id_receita', 'id_user'], 'integer'],
-            [['descricao'], 'safe'],
+            [['descricao', 'data_hora'], 'safe'],
         ];
     }
 
@@ -60,6 +60,7 @@ class ComentarioSearch extends Comentario
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'data_hora' => $this->data_hora,
             'id_receita' => $this->id_receita,
             'id_user' => $this->id_user,
         ]);

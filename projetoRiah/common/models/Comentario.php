@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $descricao
+ * @property string $data_hora
  * @property int $id_receita
  * @property int $id_user
  *
@@ -31,8 +32,9 @@ class Comentario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['descricao'], 'required'],
+            [['descricao', 'id_receita', 'id_user'], 'required'],
             [['descricao'], 'string'],
+            [['data_hora'], 'safe'],
             [['id_receita', 'id_user'], 'integer'],
             [['id_receita'], 'exist', 'skipOnError' => true, 'targetClass' => Receita::className(), 'targetAttribute' => ['id_receita' => 'id']],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
@@ -47,6 +49,7 @@ class Comentario extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'descricao' => 'Descrição',
+            'data_hora' => 'Data Criação',
             'id_receita' => 'Id Receita',
             'user.username' => 'Id User',
         ];

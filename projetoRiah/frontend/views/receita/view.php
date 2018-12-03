@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 
 /* @var $this yii\web\View */
@@ -83,17 +84,35 @@ $this->title = $model->nome;
 
             //'id',
             'descricao:ntext',
-            //'id_receita',
+            'data_hora',
             ['header' => 'Utilizador', 'attribute' => 'user.username',
                 'headerOptions' => ['style' => 'color:#3277b3']
             ],
-            ['class' => 'yii\grid\ActionColumn',
-                'header' => "Ações",
-                'headerOptions' => [
-                    'style' => 'color:#3277b3'
-                ],
-                'template' => '{update} {delete}',
-            ],
+
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Actions',
+                'headerOptions' => ['style' => 'color:#337ab7'],
+                'template' => '{update}',
+               /* 'buttons' => [
+
+                    'update' => function ($url, $model)  {
+
+                            $url = Url::to(['comentario/update', 'id' => $model->id]);
+                            return Html::a('<span class="fa fa-pencil"></span>', $url, ['title' => 'update']);
+
+                    }
+                ]*/
+            ]
         ],
+
+        /*['class' => 'yii\grid\ActionColumn',
+            'header' => "Ações",
+            'headerOptions' => [
+                'style' => 'color:#3277b3'
+            ],
+            'template' => '{update} {delete}',
+        ],*/
+
     ]); ?>
 </div>
