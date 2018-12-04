@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\grid\GridView;
 use yii\helpers\Url;
+use yii\widgets\ListView;
 
 
 /* @var $this yii\web\View */
@@ -24,7 +25,7 @@ $this->title = $model->nome;
 
         if (empty($like)) {
             echo Html::a(Html::img('css/imagens/like.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
-        } else {
+        } else{
             echo Html::a(Html::img('css/imagens/like_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
         } ?>
         &nbsp;
@@ -75,44 +76,18 @@ $this->title = $model->nome;
 <p>
     <?= Html::a('Comentar', ['comentario/create', 'id_receita' => $model->id], ['class' => 'btn btn-success']) ?>
 </p>
-<div class="fundoBranco">
-    <?= GridView::widget([
+
+    <?=
+    ListView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            //['class' => 'yii\grid\SerialColumn'],
-
-            //'id',
-            'descricao:ntext',
-            'data_hora',
-            ['header' => 'Utilizador', 'attribute' => 'user.username',
-                'headerOptions' => ['style' => 'color:#3277b3']
-            ],
-
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'header' => 'Actions',
-                'headerOptions' => ['style' => 'color:#337ab7'],
-                'template' => '{update}',
-               /* 'buttons' => [
-
-                    'update' => function ($url, $model)  {
-
-                            $url = Url::to(['comentario/update', 'id' => $model->id]);
-                            return Html::a('<span class="fa fa-pencil"></span>', $url, ['title' => 'update']);
-
-                    }
-                ]*/
-            ]
+        'options' => [
+            'tag' => 'div',
+            'class' => 'list-wrapper',
+            'id' => 'list-wrapper',
         ],
+        'layout' => "{pager}\n{items}\n{summary}",
+        'itemView' => '_lista_Comentario',
 
-        /*['class' => 'yii\grid\ActionColumn',
-            'header' => "Ações",
-            'headerOptions' => [
-                'style' => 'color:#3277b3'
-            ],
-            'template' => '{update} {delete}',
-        ],*/
+    ]);
+    ?>
 
-    ]); ?>
-</div>

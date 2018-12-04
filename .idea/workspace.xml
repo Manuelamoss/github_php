@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e363cf93-703e-4bac-91ff-44207b5a0a18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/receita/_lista_Comentario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetoRiah/common/models/Comentario.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/common/models/Comentario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetoRiah/common/models/ComentarioSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/common/models/ComentarioSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/controllers/ComentarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/controllers/ComentarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/views/receita/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/views/receita/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoRiah/frontend/web/css/newcss.css" beforeDir="false" afterPath="$PROJECT_DIR$/projetoRiah/frontend/web/css/newcss.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/receita/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="539">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+              <folding>
+                <element signature="e#7#28#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/receita/_lista_Comentario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#7#28#0#PHP" expanded="true" />
               </folding>
@@ -37,13 +48,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/backend/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-              <folding>
-                <element signature="e#7#28#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -52,16 +60,35 @@
         <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projetoRiah/common/models/Comentario.php">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/web/css/newcss.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="539">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/web/css/site.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-510" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="79" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="79" />
+              <folding>
+                <element signature="e#7#28#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,8 +96,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/controllers/ComentarioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="420">
+              <caret line="97" column="23" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="23" />
+              <folding>
+                <element signature="e#40#48#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/update.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
               </folding>
@@ -103,8 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/projetoRiah/backend/views/classificacao/index.php" />
-        <option value="$PROJECT_DIR$/projetoRiah/backend/views/categoria/create.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/views/site/login.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/web/css/newcss.css" />
         <option value="$PROJECT_DIR$/projetoRiah/frontend/web/assets/85913bfa/css/bootstrap.css" />
@@ -123,7 +169,6 @@
         <option value="$PROJECT_DIR$/projetoRiah/backend/views/categoria/_form.php" />
         <option value="$PROJECT_DIR$/projetoRiah/common/models/CategoriaSearch.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/controllers/ClassificacaoReceitasController.php" />
-        <option value="$PROJECT_DIR$/projetoRiah/frontend/web/css/newcss.css" />
         <option value="$PROJECT_DIR$/projetoRiah/frontend/views/site/index.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/controllers/ReceitaController1.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/controllers/ReceitaController.php" />
@@ -148,12 +193,15 @@
         <option value="$PROJECT_DIR$/projetoRiah/common/models/User.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/views/user/view.php" />
         <option value="$PROJECT_DIR$/projetoRiah/backend/views/categoria/index.php" />
-        <option value="$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php" />
-        <option value="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php" />
-        <option value="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php" />
         <option value="$PROJECT_DIR$/projetoRiah/common/models/Comentario.php" />
+        <option value="$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php" />
         <option value="$PROJECT_DIR$/projetoRiah/frontend/controllers/ComentarioController.php" />
+        <option value="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php" />
+        <option value="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/update.php" />
+        <option value="$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php" />
+        <option value="$PROJECT_DIR$/projetoRiah/frontend/web/css/newcss.css" />
         <option value="$PROJECT_DIR$/projetoRiah/frontend/views/receita/view.php" />
+        <option value="$PROJECT_DIR$/projetoRiah/frontend/views/receita/_lista_Comentario.php" />
       </list>
     </option>
   </component>
@@ -225,8 +273,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -264,20 +312,7 @@
               <item name="projetoRiah" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="categoria" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="github_php" type="b2602c69:ProjectViewProjectNode" />
-              <item name="github_php" type="462c0819:PsiDirectoryNode" />
-              <item name="projetoRiah" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="github_php" type="b2602c69:ProjectViewProjectNode" />
-              <item name="github_php" type="462c0819:PsiDirectoryNode" />
-              <item name="projetoRiah" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="github_php" type="b2602c69:ProjectViewProjectNode" />
@@ -313,15 +348,7 @@
               <item name="projetoRiah" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="github_php" type="b2602c69:ProjectViewProjectNode" />
-              <item name="github_php" type="462c0819:PsiDirectoryNode" />
-              <item name="projetoRiah" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="receita" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,12 +441,13 @@
       <workItem from="1543587737662" duration="112000" />
       <workItem from="1543679975610" duration="22478000" />
       <workItem from="1543747646244" duration="20702000" />
-      <workItem from="1543847772319" duration="18512000" />
+      <workItem from="1543847772319" duration="18557000" />
+      <workItem from="1543929816004" duration="14882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189945000" />
+    <option name="totallyTimeSpent" value="204872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -432,9 +460,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14899328" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15100671" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,27 +481,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14899328" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -491,81 +497,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projetoRiah/console/migrations/m181022_150300_init_rbac.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/backend/views/receita/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="64" column="147" selection-start-line="64" selection-start-column="92" selection-end-line="64" selection-end-column="147" />
-          <folding>
-            <element signature="e#7#28#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/common/models/ReceitaSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1151">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#33#41#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/vendor/yiisoft/yii2/helpers/BaseHtml.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="538" column="27" selection-start-line="538" selection-start-column="27" selection-end-line="538" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/web/css/site.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/receita/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/receita/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
-          <folding>
-            <element signature="e#7#28#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/console/config/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/console/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/console/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/console/config/params.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/site/home.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/site/contact.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/web/index.php">
@@ -586,15 +521,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/common/fixtures/UserFixture.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/params.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/main.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/bootstrap.php">
@@ -681,23 +607,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="e#40#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/common/models/ComentarioSearch.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/view.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/update.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/index.php">
@@ -713,24 +626,75 @@
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_search.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php">
+    <entry file="file://$PROJECT_DIR$/projetoRiah/backend/controllers/ComentarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
+        <state relative-caret-position="-969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/backend/views/categoria/update.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/controllers/CurtidasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1518" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/test.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/params.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/web/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/common/models/Comentario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="408">
           <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/controllers/ReceitaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/controllers/ComentarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="420">
+          <caret line="97" column="23" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="23" />
           <folding>
             <element signature="e#40#48#0#PHP" expanded="true" />
           </folding>
@@ -739,18 +703,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        <state relative-caret-position="272">
+          <caret line="16" column="79" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="79" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/backend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/comentario/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/web/css/newcss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/receita/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+        <state relative-caret-position="539">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#7#28#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projetoRiah/frontend/views/receita/_lista_Comentario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
           </folding>

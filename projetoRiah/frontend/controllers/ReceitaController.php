@@ -110,7 +110,7 @@ class ReceitaController extends Controller
 
         // try get like per recipe
         if (!empty($receita_id) && !Yii::$app->user->isGuest) {
-            $curtida = Curtidas::find()->where(['id_receita' => $receita_id, 'id_user' => Yii::$app->user->id, 'status' => $like])->one();
+            $curtida = Curtidas::find()->where(['id_receita' => $receita_id, 'id_user' => Yii::$app->user->id])->one();
 
             $data = Receita::find()->where(['id' => $receita_id])->one();
 
@@ -121,20 +121,22 @@ class ReceitaController extends Controller
                 $novaCurtida->status = $like;
                 $novaCurtida->save();
 
-
                 if (empty($data)) {
                     // new record
                     $data = new Receita();
                     $data->id = $receita_id;
                 }
                 // set from like /dislike
-                if ($like < 0) {
-                    $data->descurtir = $data->descurtir + 1;
-                } else {
-                    $data->curtir = $data->curtir + 1;
+                if (empty($curtida->status)) {
+                    if ($like < 0) {
+                        $data->descurtir = $data->descurtir + 1;
+                    } else {
+                        $data->curtir = $data->curtir + 1;
+                    }
+                    $data->save();
                 }
-                $data->save();
-            } else {
+            }
+            elseif ($curtida->status == $like) {
                 $curtida->delete();
                 if ($like < 0) {
                     $data->descurtir = $data->descurtir - 1;
@@ -142,9 +144,24 @@ class ReceitaController extends Controller
                     $data->curtir = $data->curtir - 1;
                 }
                 $data->save();
+            } else {
+                $curtida->status;
             }
         }
         return $this->redirect(['view', 'id' => $receita_id]);
+    }
+
+    public function actionList()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Comentario::find()->where(['status' => 1])->orderBy('id DESC'),
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+        ]);
+
+        $this->view->title = 'Comentário List';
+        return $this->render('list', ['listDataProvider' => $dataProvider]);
     }
 
     /**

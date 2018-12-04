@@ -84,7 +84,7 @@ class ComentarioController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id,$id_receita)
     {
         $model = $this->findModel($id);
 
@@ -94,6 +94,8 @@ class ComentarioController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'id'=>$id,
+            'id_receita' => $id_receita
         ]);
     }
 
