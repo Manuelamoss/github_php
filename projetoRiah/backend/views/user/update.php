@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <h1><?= Html::encode($this->title) ?></h1>
 
         <p> Status 0: Bloqueado.</p>
+        <p> Status 5: Administrador.</p>
         <p> Status 10: Ativo.</p>
     </div>
     <?= $this->render('_form', [

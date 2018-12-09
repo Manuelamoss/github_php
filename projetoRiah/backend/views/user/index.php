@@ -29,16 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 //['class' => 'yii\grid\SerialColumn'],
 
-                'id',
+                ['header' => 'id',
+                    'headerOptions' => ['style' => 'color:#3277b3'],
+                    'value' => 'id',
+                    'contentOptions' => ['style' => 'max-width: 100px;'],
+                ],
                 'username',
-                //'auth_key',
-                //'password_hash',
-                //'password_reset_token',
-                //'email:email',
-                //'status',
-                //'created_at',
-                //'updated_at',
-
+                'email:email',
                 ['class' => 'yii\grid\ActionColumn',
                     'header' => "Ações",
                     'headerOptions' => [
@@ -49,4 +46,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]); ?>
     </div>
+    <br>
+    <?= Html::a('voltar', ['site/index'], ['class' => 'btn btn-primary']) ?>
 </div>

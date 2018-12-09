@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use common\models\CategoriaSearch;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Receita */
@@ -18,11 +20,12 @@ use yii\widgets\ActiveForm;
 
         <?= $form->field($model, 'descricao_preparo')->textarea(['rows' => 6]) ?>
 
-        <?= $form->field($model, 'id_categoria')->textInput() ?>
+        <?= $form->field($model, 'id_categoria')->dropDownList($items = CategoriaSearch::find()
+            ->select(['nome'])
+            ->indexBy('id')
+            ->column(),
+        array('prompt'=>'Selecione a categoria'))?>
 
-        <?php // $form->field($model, 'curtir')->textInput() ?>
-
-        <?php // $form->field($model, 'descurtir')->textInput() ?>
     </div>
     <br>
     <div class="form-group">

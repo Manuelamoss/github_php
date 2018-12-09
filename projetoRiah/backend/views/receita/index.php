@@ -74,5 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
         ]); ?>
-    </div>
+        </div>
+    <br>
+    <?= Html::a('voltar', ['site/index'], ['class' => 'btn btn-primary']) ?>
 </div>
