@@ -2,18 +2,18 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use yii\grid\GridView;
-use yii\helpers\Url;
 use yii\widgets\ListView;
+
 
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Receita */
 
+
+
 $this->title = $model->nome;
-//$this->params['breadcrumbs'][] = ['label' => 'Receitas', 'url' => ['index']];
-//$this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="receita-view">
 
     <div class="fundoTitulo" align="center">
@@ -25,7 +25,7 @@ $this->title = $model->nome;
 
         if (empty($like)) {
             echo Html::a(Html::img('css/imagens/like.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
-        } else{
+        } else {
             echo Html::a(Html::img('css/imagens/like_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
         } ?>
         &nbsp;
@@ -39,31 +39,16 @@ $this->title = $model->nome;
         } ?>
 
     </div>
-
-    <p>
-        <?php // Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?php /* Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) */ ?>
-    </p>
-
+<br>
+<br>
 </div>
 
 <div class="fundoBranco">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
-            //'nome',
             'tempo_preparo',
             'descricao_preparo:ntext',
-            //'id_categoria',
-            //'curtir',
-            //'descurtir',
         ],
     ]) ?>
 
@@ -74,8 +59,11 @@ $this->title = $model->nome;
 </div>
 <br>
 <p>
+
     <?= Html::a('Comentar', ['comentario/create', 'id_receita' => $model->id], ['class' => 'btn btn-success']) ?>
 </p>
+
+
 
     <?=
     ListView::widget([
@@ -90,4 +78,5 @@ $this->title = $model->nome;
 
     ]);
     ?>
+
 

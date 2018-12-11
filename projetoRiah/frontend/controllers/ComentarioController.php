@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Comentario;
 use common\models\ComentarioSearch;
+use yii\rbac\DbManager;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -68,6 +69,14 @@ class ComentarioController extends Controller
         $model = new Comentario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            //associar autor ao id
+            $user_id = \Yii::$app->user->id;
+            $auth = new DbManager();
+            $auth->init();
+            $role = $auth->getRole('author');
+            $auth->assign($role, $user_id);
+
             return $this->redirect(['receita/view', 'id' => $model->id_receita]);
         }
 
@@ -84,20 +93,23 @@ class ComentarioController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id,$id_receita)
+    public function actionUpdate($id, $id_receita)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        //var_dump(\Yii::$app->user); die();
+        if (\Yii::$app->user->can('updateComment', ['model' => $model])) {
+            //var_dump(\Yii::$app->user); die();
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['receita/view', 'id' => $id_receita]);
+            }
+            return $this->render('update', [
+                'model' => $model,
+                'id' => $id,
+                'id_receita' => $id_receita
+            ]);
         }
-
-        return $this->render('update', [
-            'model' => $model,
-            'id'=>$id,
-            'id_receita' => $id_receita
-        ]);
     }
+
 
     /**
      * Deletes an existing Comentario model.

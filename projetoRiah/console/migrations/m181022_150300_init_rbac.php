@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use frontend\models\AuthorRule;
 
 /**
  * Class m181022_150300_init_rbac
@@ -10,32 +11,48 @@ class m181022_150300_init_rbac extends Migration
     public function up()
     {
         $auth = Yii::$app->authManager;
+        $auth->removeAll();
 
-        // add "createPost" permission
-        $createReceita = $auth->createPermission('createReceita');
-        $createReceita->description = 'Create a receita';
-        $auth->add($createReceita);
+        $rule = new AuthorRule;
+        $auth->add($rule);
+
+        // add "createComment" permission
+        $createComment = $auth->createPermission('createComment');
+        $createComment->description = 'Create a Comment';
+        $auth->add($createComment);
 
         // add "updatePost" permission
-        $updateReceita = $auth->createPermission('updateReceita');
-        $updateReceita->description = 'Update receita';
-        $auth->add($updateReceita);
+        $updateComment = $auth->createPermission('updateComment');
+        $updateComment->description = 'Update a Comment';
+        $auth->add($updateComment);
 
-        // add "author" role and give this role the "createPost" permission
+        // add the "updateOwnComment" permission and associate the rule with it.
+        $updateOwnComment = $auth->createPermission('updateOwnComment');
+        $updateOwnComment->description = 'Update own comment';
+        $updateOwnComment->ruleName = $rule->name;
+        $auth->add($updateOwnComment);
+
+        // add "author" role and give this role the "updateComment" permission
         $author = $auth->createRole('author');
         $auth->add($author);
-        $auth->addChild($author, $createReceita);
+        $auth->addChild($author, $createComment, $updateComment);
 
-        // add "admin" role and give this role the "updatePost" permission
+        // "updateOwnPost" will be used from "updatePost"
+        $auth->addChild($updateOwnComment, $updateComment);
+
+        // add "admin" role and give this role the "updateComment" permission
         // as well as the permissions of the "author" role
         $admin = $auth->createRole('admin');
         $auth->add($admin);
-        $auth->addChild($admin, $updateReceita);
+        $auth->addChild($admin, $updateComment);
         $auth->addChild($admin, $author);
+
+        // allow "author" to update their own comment
+        $auth->addChild($author, $updateOwnComment);
 
         // Assign roles to users. 1 and 2 are IDs returned by IdentityInterface::getId()
         // usually implemented in your User model.
-        //$auth->assign($author, 2);
+        $auth->assign($author, 3);
         $auth->assign($admin, 1);
     }
 
@@ -45,37 +62,5 @@ class m181022_150300_init_rbac extends Migration
 
         $auth->removeAll();
     }
-    //o codigo abaixo ja estava configurado
-    /**
-     * {@inheritdoc}
-     */
-   /* public function safeUp()
-    {
 
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-   /* public function safeDown()
-    {
-        echo "m181022_150300_init_rbac cannot be reverted.\n";
-
-        return false;
-    }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m181022_150300_init_rbac cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }

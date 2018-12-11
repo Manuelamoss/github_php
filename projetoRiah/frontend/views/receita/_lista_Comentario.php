@@ -24,7 +24,9 @@ use yii\helpers\Url;
 
         </div>
         <div class="col-lg-1">
+           <?php if (\Yii::$app->user->can('updateComment', ['model' => $model])){?>
             <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita]); ?>
+            <?php } ?>
         </div>
 
     </div>
