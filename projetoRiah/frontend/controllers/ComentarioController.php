@@ -70,13 +70,6 @@ class ComentarioController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            //associar autor ao id
-            $user_id = \Yii::$app->user->id;
-            $auth = new DbManager();
-            $auth->init();
-            $role = $auth->getRole('author');
-            $auth->assign($role, $user_id);
-
             return $this->redirect(['receita/view', 'id' => $model->id_receita]);
         }
 
@@ -118,11 +111,13 @@ class ComentarioController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete($id, $id_receita)
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(array('receita/view',
+
+            'id' => $id_receita));
     }
 
     /**

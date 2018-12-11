@@ -58,7 +58,10 @@ $this->title = 'Receitas';
                     ],
 
                     'template' => '{view}',
+                    'buttonOptions'=>['title'=>'abrir'],
+
                     'contentOptions' => ['style' => 'max-width: 100px;'],
+
                 ],
             ],
         ]); ?>

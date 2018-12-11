@@ -25,8 +25,19 @@ use yii\helpers\Url;
         </div>
         <div class="col-lg-1">
            <?php if (\Yii::$app->user->can('updateComment', ['model' => $model])){?>
-            <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita]); ?>
+            <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita],['title' => 'alterar']); ?>
+               &nbsp
+               <?= Html::a('',['comentario/delete', 'id' => $model->id,'id_receita' => $model->id_receita],[
+                   'data' => [
+                       'method' => 'post',
+                       // use it if you want to confirm the action
+                       'confirm' => 'Are you sure?',
+                   ],
+                   'class' => 'glyphicon glyphicon-trash ',
+                   'title' => 'apagar',
+               ]); ?>
             <?php } ?>
+
         </div>
 
     </div>
