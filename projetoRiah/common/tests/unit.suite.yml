@@ -4,4 +4,10 @@ bootstrap: false
 modules:
     enabled:
         - Yii2:
-            part: fixtures
+            part: [orm, email, fixtures]
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=projetoriah_test'
+            user: 'root'
+            password: ''
+
+        - Asserts

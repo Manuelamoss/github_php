@@ -11,13 +11,17 @@
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/bower-asset/yii2-pjax" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/cebe/markdown" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/codeception/base" />
+      <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/codeception/codeception" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/codeception/phpunit-wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/codeception/stub" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/codeception/verify" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/ezyang/htmlpurifier" />
+      <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/facebook/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/phpdocumentor/reflection-common" />
@@ -54,6 +58,7 @@
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/projetoRiah/vendor/yiisoft/yii2" />
