@@ -14,7 +14,7 @@ class ComentarioReceitaCest
     public function comentarReceitaTest(FunctionalTester $I)
     {
         $I->amLoggedInAs('1');
-        $I->amOnPage('receita/view?id=1');
+        $I->amOnPage('receita/view?id=24');
         $I->click('Comentar');
         $I->fillField('Comentario[descricao]', 'teste bom');
         $I->click('Salvar');

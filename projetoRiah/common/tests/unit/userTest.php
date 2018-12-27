@@ -55,10 +55,11 @@ class userTest extends \Codeception\Test\Unit
     }
 
     //Apagar o registo e Verificar que o registo não se encontra na BD.
-    public function testDelete() {
-        $id = $this->tester->grabRecord('common\models\User',['username'=>'testeUserUpdate']);
+    public function testDelete()
+    {
+        $id = $this->tester->grabRecord('common\models\User', ['username' => 'testeUserUpdate']);
         $user = User::findOne($id);
         $user->delete();
-        $this->tester->dontSeeRecord('common\models\User',['username'=>'testeUserUpdate']);
+        $this->tester->dontSeeRecord('common\models\User', ['username' => 'testeUserUpdate']);
     }
 }
