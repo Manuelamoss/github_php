@@ -1,4 +1,5 @@
 <?php namespace frontend\tests\functional;
+
 use common\models\Comentario;
 use frontend\tests\FunctionalTester;
 
@@ -12,13 +13,11 @@ class ComentarioReceitaCest
     // tests
     public function comentarReceitaTest(FunctionalTester $I)
     {
-        $I -> amLoggedInAs('1');
-        $I -> amOnPage('receita/view?id=1');
+        $I->amLoggedInAs('1');
+        $I->amOnPage('receita/view?id=1');
         $I->click('Comentar');
-        $I -> fillField('Comentario[descricao]','teste bom');
+        $I->fillField('Comentario[descricao]', 'teste bom');
         $I->click('Salvar');
-        $I->seeRecord('common\models\comentario',['descricao'=>'teste bom']);
-
-
+        $I->seeRecord('common\models\comentario', ['descricao' => 'teste bom']);
     }
 }

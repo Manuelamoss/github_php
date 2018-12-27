@@ -1,10 +1,6 @@
 <?php namespace common\tests;
 
-
-use common\models\Comentario;
-use common\models\Curtidas;
 use common\models\User;
-use yii\debug\models\search\Db;
 
 class userTest extends \Codeception\Test\Unit
 {

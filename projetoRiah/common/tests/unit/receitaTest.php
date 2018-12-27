@@ -26,7 +26,7 @@ class receitaTest extends \Codeception\Test\Unit
         $receita->tempo_preparo = '';
         $this->assertFalse($receita->validate(['tempo_preparo']));
 
-        $receita->tempo_preparo = null;
+        $receita->descricao_preparo = '';
         $this->assertNotNull($receita->validate(['tempo_preparo']));
 
         $receita->nome ='bolo de chocolate com calda de morango';
