@@ -31,7 +31,7 @@ use yii\helpers\Url;
                    'data' => [
                        'method' => 'post',
                        // use it if you want to confirm the action
-                       'confirm' => 'Are you sure?',
+                       'confirm' => 'Tem certeza que deseja apagar?',
                    ],
                    'class' => 'glyphicon glyphicon-trash ',
                    'title' => 'apagar',

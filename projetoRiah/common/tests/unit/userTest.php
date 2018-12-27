@@ -1,7 +1,10 @@
 <?php namespace common\tests;
 
-use backend\models\UserSearch;
+
+use common\models\Comentario;
+use common\models\Curtidas;
 use common\models\User;
+use yii\debug\models\search\Db;
 
 class userTest extends \Codeception\Test\Unit
 {
@@ -9,7 +12,7 @@ class userTest extends \Codeception\Test\Unit
      * @var \common\tests\UnitTester
      */
     protected $tester;
-    
+
     protected function _before()
     {
     }
@@ -19,35 +22,47 @@ class userTest extends \Codeception\Test\Unit
     }
 
     // Despoletar todas as regras de validação (introduzindo dados erróneos);
-    /*public function testValidation()
+    public function testValidation()
     {
         $user = new User();
 
-        $user->username = '';
-        $this->assertFalse($user->validate(['username']));
+        $user->username = null;
+        $this->assertNotNull($user->validate(['username']));
 
-        //$user->username ='toolooooonpppppppppppppppppppppppppppptoolooooonppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppgnaaaaaaameeeeppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppgnaaaaaaameeee';
-        //$this->assertFalse($user->validate(['username']));
+        $user->email = null;
+        $this->assertNotNull($user->validate(['email']));
 
-        //$user->username = 'davert';
-        //$this->assertTrue($user->validate(['username']));
-    }*/
+    }
 
-    //Criar um registo válido e guardar na BD
-    /*public function testNewUserDB(){
-        $test= new User();
-        $test->username= "testeUser";
-        $test->email="teste@user.com";
+    //Criar um registo válido e guardar na BD e Ver se o registo válido se encontra na BD
+    public function testNewUserDB()
+    {
+        $test = new User();
+        $test->username = "testeUser";
+        $test->email = "teste@user.com";
         $test->generateAuthKey();
         $test->setPassword("123teste");
         $test->generatePasswordResetToken();
         $test->save();
-        $this->tester->seeInDatabase('user',['username'=>'testeUser','email'=>"teste@user.com"]);
+        $this->tester->seeInDatabase('user', ['username' => 'testeUser']);
+    }
 
-    }*/
 
-    //Ver se o registo válido se encontra na BD
-    public function testCheckDB(){
-        $this->tester->seeInDatabase('user',['username'=>'testeUser']);
+    //aplicar um update e Ver se o registo atualizado se encontra na BD
+    public function testUpdate()
+    {
+        $id = $this->tester->grabRecord('common\models\User', ['username' => 'testeUser']);
+        $user = User::findOne($id);
+        $user->username = 'testeUserUpdate';
+        $user->update();
+        $this->tester->seeRecord('common\models\User', ['username' => 'testeUserUpdate']);
+    }
+
+    //Apagar o registo e Verificar que o registo não se encontra na BD.
+    public function testDelete() {
+        $id = $this->tester->grabRecord('common\models\User',['username'=>'testeUserUpdate']);
+        $user = User::findOne($id);
+        $user->delete();
+        $this->tester->dontSeeRecord('common\models\User',['username'=>'testeUserUpdate']);
     }
 }

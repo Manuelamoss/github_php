@@ -24,18 +24,19 @@ $this->title = $model->nome;
         echo "&nbsp; &nbsp;";
 
         if (empty($like)) {
-            echo Html::a(Html::img('css/imagens/like.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
+
+            echo Html::a(Html::img('@web/css/imagens/like.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['name'=>'curtir','receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
         } else {
-            echo Html::a(Html::img('css/imagens/like_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
+            echo Html::a(Html::img('@web/css/imagens/like_black.png', ['title' => 'like', 'width' => '20px', 'height' => '20px',]), ['receita/curtidas', 'receita_id' => $model->id, 'like' => 1]);
         } ?>
         &nbsp;
         <?php echo Html::label($model->descurtir);
         echo "&nbsp; &nbsp;";
         if (empty($dislike)) {
-            echo Html::a(Html::img('css/imagens/dislike.png', ['title' => 'dislike', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => -1]);
+            echo Html::a(Html::img('@web/css/imagens/dislike.png', ['title' => 'dislike', 'width' => '20px', 'height' => '20px', 'name'=>'dislike']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => -1]);
 
         } else {
-            echo Html::a(Html::img('css/imagens/dislike_black.png', ['title' => 'dislike', 'width' => '20px', 'height' => '20px']), ['receita/curtidas', 'receita_id' => $model->id, 'like' => -1]);
+            echo Html::a(Html::img('@web/css/imagens/dislike_black.png', ['title' => 'dislike', 'width' => '20px', 'height' => '20px',]), ['receita/curtidas', 'receita_id' => $model->id, 'like' => -1]);
         } ?>
 
     </div>

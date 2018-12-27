@@ -15,6 +15,7 @@ use common\models\CategoriaSearch;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
+        'id'=>'form',
     ]); ?>
 
 
