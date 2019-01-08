@@ -213,12 +213,4 @@ class ReceitaController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
-    public function actionFiltrarListaReceita()
-    {
-        $searchModel = new ReceitaSearch();
-        if (Yii::$app->request->isPost) {
-
-        }
-    }
 }

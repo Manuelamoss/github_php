@@ -25,6 +25,8 @@ use common\models\CategoriaSearch;
             ->indexBy('id')
             ->column(),
         array('prompt'=>'Selecione a categoria'))?>
+        <?= $form->field($model, 'curtir')->textInput(['value' => '0']) ?>
+        <?= $form->field($model, 'descurtir')->textInput(['value' => '0']) ?>
 
     </div>
     <br>

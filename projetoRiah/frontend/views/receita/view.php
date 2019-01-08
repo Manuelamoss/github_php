@@ -61,7 +61,7 @@ $this->title = $model->nome;
 <br>
 <p>
 
-    <?= Html::a('Comentar', ['comentario/create', 'id_receita' => $model->id], ['class' => 'btn btn-success','name'=>'buttonComment']) ?>
+    <?= Html::a('Comentar', ['comentario/create', 'id_receita' => $model->id], ['class' => 'btn btn-success','id'=>'buttonComment']) ?>
 </p>
 
 

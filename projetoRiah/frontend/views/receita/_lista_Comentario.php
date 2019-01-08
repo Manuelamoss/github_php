@@ -25,7 +25,7 @@ use yii\helpers\Url;
         </div>
         <div class="col-lg-1">
            <?php if (\Yii::$app->user->can('updateComment', ['model' => $model])){?>
-            <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita],['title' => 'alterar']); ?>
+            <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita],['title' => 'alterar','id'=>'trocar']); ?>
                &nbsp
                <?= Html::a('',['comentario/delete', 'id' => $model->id,'id_receita' => $model->id_receita],[
                    'data' => [
@@ -35,6 +35,7 @@ use yii\helpers\Url;
                    ],
                    'class' => 'glyphicon glyphicon-trash ',
                    'title' => 'apagar',
+
                ]); ?>
             <?php } ?>
 

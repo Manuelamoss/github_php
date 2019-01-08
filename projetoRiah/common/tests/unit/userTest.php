@@ -27,9 +27,7 @@ class userTest extends \Codeception\Test\Unit
 
         $user->email = null;
         $this->assertNotNull($user->validate(['email']));
-
     }
-
     //Criar um registo válido e guardar na BD e Ver se o registo válido se encontra na BD
     public function testNewUserDB()
     {
@@ -42,8 +40,6 @@ class userTest extends \Codeception\Test\Unit
         $test->save();
         $this->tester->seeInDatabase('user', ['username' => 'testeUser']);
     }
-
-
     //aplicar um update e Ver se o registo atualizado se encontra na BD
     public function testUpdate()
     {
@@ -53,7 +49,6 @@ class userTest extends \Codeception\Test\Unit
         $user->update();
         $this->tester->seeRecord('common\models\User', ['username' => 'testeUserUpdate']);
     }
-
     //Apagar o registo e Verificar que o registo não se encontra na BD.
     public function testDelete()
     {

@@ -14,6 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->textInput() ?>
 
+
     <div class="form-group">
         <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
         <?= Html::a('voltar', ['user/index'], ['class' => 'btn btn-primary']) ?>

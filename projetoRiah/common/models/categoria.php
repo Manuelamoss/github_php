@@ -27,7 +27,7 @@ class categoria extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'required'],
-            [['nome'], 'string', 'max' => 10],
+            [['nome'], 'string', 'max' => 30],
         ];
     }
 
