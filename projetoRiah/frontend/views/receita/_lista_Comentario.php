@@ -2,8 +2,6 @@
 
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
-use yii\widgets\ActiveForm;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Comentario */

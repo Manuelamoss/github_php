@@ -36,8 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'headerOptions' => [
                         'style' => 'color:#3277b3',
                     ],
+                    'template' => '{update} {delete}',
                 ],
             ],
         ]); ?>
     </div>
+    <br>
+    <?= Html::a('voltar', ['site/index'], ['class' => 'btn btn-primary']) ?>
 </div>

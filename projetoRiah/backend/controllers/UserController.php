@@ -87,6 +87,19 @@ class UserController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            //altera a regra de utilizadro autor para admin caso o status seja alterado
+            $auth = \Yii::$app->authManager;
+            $auth->revokeAll($model->getId());
+            $authorRole = $auth->getRole('author');
+            //$auth->remove($auth->getAssignment('author', $model->getId()));
+            if($model->status == 5){
+
+                $authorRole = $auth->getRole('admin');
+
+            }
+            $auth->assign($authorRole, $model->getId());
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

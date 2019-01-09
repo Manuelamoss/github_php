@@ -9,13 +9,16 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="category-form">
+    <div class="fundoBranco">
 
-    <?php $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
+        <div class="form-group">
+            <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
+            <?= Html::a('voltar', ['categoria/index'], ['class' => 'btn btn-primary']) ?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

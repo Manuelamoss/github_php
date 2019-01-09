@@ -11,8 +11,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
-use yii\web\Request;
-use yii\helpers\Url;
 
 /**
  * ReceitaController implements the CRUD actions for Receita model.
@@ -70,18 +68,22 @@ class ReceitaController extends Controller
             return $this->redirect(['index', 'flag' => 0]);
         }
 
-
         $comment = Comentario::find()->where(['id_receita' => $id]);
         $dataProvider = new ActiveDataProvider([
             'query' => $comment,
+            //ordenar os comentarios mais recentes primeiro
+            'sort' => [
+                'defaultOrder' => [
+                    'data_hora' => SORT_DESC,
+                ],
+            ],
         ]);
-
 
         return $this->render('view', [
             'model' => $this->findModel($id),
             'like' => $like,
             'dislike' => $dislike,
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider
         ]);
 
     }
@@ -136,6 +138,7 @@ class ReceitaController extends Controller
                     $data->save();
                 }
             }
+            //utilizador não pode curtir e descurtir ao mesmo tempo
             elseif ($curtida->status == $like) {
                 $curtida->delete();
                 if ($like < 0) {
@@ -153,15 +156,11 @@ class ReceitaController extends Controller
 
     public function actionList()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Comentario::find()->where(['status' => 1])->orderBy('id DESC'),
-            'pagination' => [
-                'pageSize' => 10,
-            ],
-        ]);
+        $dataProvider = new ActiveDataProvider();
 
         $this->view->title = 'Comentário List';
-        return $this->render('list', ['listDataProvider' => $dataProvider]);
+        return $this->render('list', ['listDataProvider' => $dataProvider,
+        ]);
     }
 
     /**

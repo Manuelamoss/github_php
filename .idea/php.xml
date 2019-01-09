@@ -33,7 +33,6 @@
       <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/typeahead.js" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/bower-asset/yii2-pjax" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/cebe/markdown" />
-      <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/base" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/phpunit-wrapper" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/stub" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/verify" />
@@ -68,6 +67,7 @@
       <path value="$PROJECT_DIR$/projetoRiah/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/codeception/codeception" />
       <path value="$PROJECT_DIR$/projetoRiah/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/projetoRiah/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

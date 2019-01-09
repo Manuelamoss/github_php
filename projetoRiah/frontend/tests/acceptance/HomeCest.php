@@ -9,12 +9,12 @@ class HomeCest
     public function checkHome(AcceptanceTester $I)
     {
         $I->amOnPage(Url::toRoute('/site/index'));
-        $I->see('My Application');
+        $I->see('RIAH');
 
-        $I->seeLink('About');
-        $I->click('About');
+        $I->seeLink('Sobre');
+        $I->click('Sobre');
         $I->wait(2); // wait for page to be opened
 
-        $I->see('This is the About page.');
+        $I->see('Manuela Moss Martinez');
     }
 }
