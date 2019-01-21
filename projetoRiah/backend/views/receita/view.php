@@ -15,17 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1>Receita: <?= Html::encode($this->title) ?></h1>
     </div>
 
-
+    <p align="center">
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
     <p>
-        <?php // Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?php /* Html::a('Deletar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ])*/ ?>
-    </p>
+
+
     <div class="fundoBranco">
         <?= DetailView::widget([
             'model' => $model,

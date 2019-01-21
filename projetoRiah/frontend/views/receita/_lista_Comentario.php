@@ -22,26 +22,21 @@ use yii\helpers\HtmlPurifier;
 
         </div>
         <div class="col-lg-1">
-           <?php if (\Yii::$app->user->can('updateComment', ['model' => $model])){?>
-            <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita],['title' => 'alterar','id'=>'trocar']); ?>
-               &nbsp
-               <?= Html::a('',['comentario/delete', 'id' => $model->id,'id_receita' => $model->id_receita],[
-                   'data' => [
-                       'method' => 'post',
-                       // use it if you want to confirm the action
-                       'confirm' => 'Tem certeza que deseja apagar?',
-                   ],
-                   'class' => 'glyphicon glyphicon-trash ',
-                   'title' => 'apagar',
+            <?php if (\Yii::$app->user->can('updateComment', ['model' => $model])) { ?>
+                <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['comentario/update', 'id' => $model->id, 'id_receita' => $model->id_receita], ['title' => 'alterar', 'id' => 'trocar']); ?>
+                &nbsp
+                <?= Html::a('', ['comentario/delete', 'id' => $model->id, 'id_receita' => $model->id_receita], [
+                    'data' => [
+                        'method' => 'post',
+                        // use it if you want to confirm the action
+                        'confirm' => 'Tem certeza que deseja apagar?',
+                    ],
+                    'class' => 'glyphicon glyphicon-trash ',
+                    'title' => 'apagar',
 
-               ]); ?>
+                ]); ?>
             <?php } ?>
-
         </div>
-
     </div>
-
-
 </div>
-
 <br>

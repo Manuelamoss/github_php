@@ -25,10 +25,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_categoria') ?>
 
-    <?php // echo $form->field($model, 'curtir') ?>
-
-    <?php // echo $form->field($model, 'descurtir') ?>
-
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

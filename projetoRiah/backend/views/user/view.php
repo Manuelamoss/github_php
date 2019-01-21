@@ -17,7 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p align="center">
         <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-
     </p>
 
     <div class="fundoBranco">
@@ -25,7 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'model' => $model,
             'attributes' => [
                 'id',
-                //'username',
                 'auth_key',
                 'password_hash',
                 'password_reset_token',
@@ -38,5 +36,4 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <br>
     <?= Html::a('voltar', ['user/index'], ['class' => 'btn btn-primary']) ?>
-
 </div>

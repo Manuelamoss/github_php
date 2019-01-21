@@ -40,3 +40,7 @@ body {
     -webkit-text-fill-color: white;
     border-radius: 2px;
 }
+.scroll{
+    overflow-y: scroll;
+    Height:500px;
+}

@@ -16,11 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     </div>
 
-    <!--Admin não cria uilizadores
-    <p align="center">
-        <?php Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>-->
-
     <div class="fundoBranco">
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
@@ -42,7 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         'style' => 'color:#3277b3'
                     ],
                     'template' => '{view} {update}']
-
             ],
         ]); ?>
     </div>

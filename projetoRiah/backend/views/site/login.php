@@ -7,19 +7,14 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use yii\helpers\Url;
-use yii\bootstrap\Alert;
 
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
 
 <div class="site-login">
-
     <div class="fundologin">
         <h1><?= Html::encode($this->title) ?></h1>
-
         <p>Preencha os campos abaixo para fazer login:</p>
     </div>
 

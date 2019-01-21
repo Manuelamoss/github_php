@@ -72,7 +72,6 @@ ListView::widget([
         'class' => 'list-wrapper',
         'id' => 'list-wrapper',
     ],
-
     'layout' => "{pager}\n{items}\n{summary}",
     //lista com os comentário de uma receita (_lista_Comentario)
     'itemView' => '_lista_Comentario',

@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="comentario-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Comentario', ['create'], ['class' => 'btn btn-success']) ?>
@@ -24,12 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'descricao:ntext',
             'id_receita',
             'id_user',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

@@ -34,5 +34,4 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_user',
         ],
     ]) ?>
-
 </div>

@@ -15,7 +15,7 @@ use common\models\CategoriaSearch;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
-        'id'=>'form',
+        'id' => 'form',
     ]); ?>
 
 
@@ -29,7 +29,7 @@ use common\models\CategoriaSearch;
 
     <div class="form-group">
         <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Limpar',['index'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a('Limpar', ['index'], ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

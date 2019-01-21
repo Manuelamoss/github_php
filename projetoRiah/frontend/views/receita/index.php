@@ -4,15 +4,12 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\StringHelper;
 use yii\bootstrap\Alert;
-use common\models\ReceitaSearch;
-use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ReceitaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Receitas';
-//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php if ($flag == 0) {
     echo Alert::widget([
@@ -33,37 +30,38 @@ $this->title = 'Receitas';
             'model' => $searchModel,
 
         ]) ?>
-
-
     </div>
-    <div class="fundoBranco">
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'options' => ['style' => 'table-layout:fixed;'],
-            //'filterModel' => $searchModel,
-            'columns' => [
-                'nome',
-                [   //é exibido os primeiros 100 caracteres
-                    'attribute' => 'descricao_preparo',
-                    'value' => function ($model, $key, $index, $column) {
-                        return StringHelper::truncate($model->descricao_preparo, 100);
-                    },
-                    'format' => 'ntext',
-                ],
-                'tempo_preparo',
-                ['class' => 'yii\grid\ActionColumn',
-                    'header' => "Ver",
-                    'headerOptions' => [
-                        'style' => 'color:#3277b3'
+    <div class="scroll">
+        <div class="fundoBranco">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'options' => ['style' => 'table-layout:fixed;'],
+                'columns' => [
+                    'nome',
+                    [   //é exibido os primeiros 100 caracteres
+                        'attribute' => 'descricao_preparo',
+                        'value' => function ($model, $key, $index, $column) {
+                            return StringHelper::truncate($model->descricao_preparo, 100);
+                        },
+                        'format' => 'ntext',
                     ],
+                    'tempo_preparo',
+                    ['header' => 'Categoria', 'attribute' => 'categoria.nome',
+                        'headerOptions' => ['style' => 'color:#3277b3'],
+                        'contentOptions' => ['style' => 'max-width: 100px;'],
+                        ],
+                    ['class' => 'yii\grid\ActionColumn',
+                        'header' => "Ver",
+                        'headerOptions' => [
+                            'style' => 'color:#3277b3'
+                        ],
+                        'template' => '{view}',
+                        'buttonOptions' => ['title' => 'abrir'],
 
-                    'template' => '{view}',
-                    'buttonOptions'=>['title'=>'abrir'],
-
-                    'contentOptions' => ['style' => 'max-width: 100px;'],
-
+                        'contentOptions' => ['style' => 'max-width: 100px;'],
+                    ],
                 ],
-            ],
-        ]); ?>
+            ]); ?>
+        </div>
     </div>
 </div>

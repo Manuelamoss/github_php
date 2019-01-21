@@ -41,7 +41,6 @@ if (!Yii::$app->user->id) {
                     <p><a class="btn btn-default" href= <?= Url::to(['categoria/index']); ?>>Abrir &raquo;</a></p>
                 </div>
             </div>
-
         </div>
     </div>
 <?php } ?>

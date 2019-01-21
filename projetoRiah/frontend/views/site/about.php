@@ -3,7 +3,6 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 
 $this->title = 'Sobre';
 //$this->params['breadcrumbs'][] = $this->title;
@@ -15,5 +14,5 @@ $this->title = 'Sobre';
     <h3>Aluna do curso de Programação de Sistemas da informação.</h3>
 
 
-    <?= Html::img('@web/css/imagens/logo.png',['alt'=>'my logo']) ?>
+    <?= Html::img('@web/css/imagens/logo.png', ['alt' => 'my logo']) ?>
 </div>

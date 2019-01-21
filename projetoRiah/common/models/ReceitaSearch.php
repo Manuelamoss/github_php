@@ -2,10 +2,8 @@
 
 namespace common\models;
 
-use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Receita;
 
 /**
  * ReceitaSearch represents the model behind the search form of `common\models\Receita`.
@@ -56,7 +54,6 @@ class ReceitaSearch extends Receita
             // $query->where('0=1');
             return $dataProvider;
         }
-
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -72,11 +69,7 @@ class ReceitaSearch extends Receita
                 ['like', 'descricao_preparo', $key]
             );
         }
-
         $query->andFilterWhere(['like', 'tempo_preparo', $this->tempo_preparo]);
-
-            //->andFilterWhere(['like', 'nome', $this->nome])
-            //->andFilterWhere(['like', 'descricao_preparo', $this->descricao_preparo]);
 
         return $dataProvider;
     }
